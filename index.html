@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notitas</title>
+    <link
+      rel="shortcut icon"
+      href="img/note_write_notebook_notes_paper_file_icon_218608.ico"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/89f32dc1fd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar has-background-primary-dark"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="navbar-brand is-align-items-center">
+          <a class="navbar-item" href="#">
+            <span class="icon-text has-text-white-ter">
+              <span class="icon is-large">
+                <i class="fa-regular fa-note-sticky fa-2xl"></i>
+              </span>
+              <h2 class="title is-2 has-text-white-ter">Notitas</h2>
+            </span>
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger has-text-white-ter"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start"></div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button has-background-primary-dark has-text-white-ter is-rounded" href="#">Nueva nota </a>
+                <a class="button has-background-primary-dark has-text-white-ter is-rounded" href="#"> Ver mis notas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="container p-3">
+      <form id="form">
+        <div class="field">
+          <label class="label">Nueva nota:</label>
+          <div class="control">
+            <input class="input is-primary" type="text" placeholder="Título" name="title" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea is-primary" name="text"></textarea>
+          </div>
+        </div>
+        <div class="field is-flex is-justify-content-end">
+          <button class="button has-background-primary-dark is-rounded" value="Guardar" type="submit">
+            <span class="icon has-text-white-ter">
+              <i class="fa-regular fa-floppy-disk"></i>
+            </span>
+            <span class="has-text-white-ter">Guardar</span>
+          </button>
+        </div>
+      </form>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
