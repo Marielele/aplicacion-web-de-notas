@@ -1,13 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // variables
+document.addEventListener("DOMContentLoaded", () => {
+  // Variables
   const burger = document.querySelector(".navbar-burger");
   const navBarMenu = document.querySelector(".navbar-menu");
-  const textArea = document.querySelector("textarea");
 
-  // eventos
+  // Eventos
   burger.addEventListener("click", function () {
     burger.classList.toggle("is-active");
     navBarMenu.classList.toggle("is-active");
   });
-  // funciones
+
+  // Funciones
+
 });

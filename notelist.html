@@ -26,7 +26,7 @@
         aria-label="main navigation"
       >
         <div class="navbar-brand is-align-items-center">
-          <a class="navbar-item" href="#">
+          <a class="navbar-item" href="index.html">
             <span class="icon-text has-text-white-ter">
               <span class="icon is-large">
                 <i class="fa-regular fa-note-sticky fa-2xl"></i>
@@ -52,8 +52,17 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons is-justify-content-space-evenly">
-                <a class="button has-background-primary-dark has-text-white-ter is-rounded" href="#">Nueva nota </a>
-                <a class="button has-background-primary-dark has-text-white-ter is-rounded" href="notelist.html"> Ver mis notas</a>
+                <a
+                  class="button has-background-primary-dark has-text-white-ter is-rounded"
+                  href="index.html"
+                  >Nueva nota
+                </a>
+                <a
+                  class="button has-background-primary-dark has-text-white-ter is-rounded"
+                  href="#"
+                >
+                  Ver mis notas</a
+                >
               </div>
             </div>
           </div>
@@ -61,29 +70,10 @@
       </nav>
     </header>
     <section class="container p-3">
-      <form id="form">
-        <div class="field">
-          <label class="label">Nueva nota:</label>
-          <div class="control">
-            <input id="title" class="input is-primary" type="text" placeholder="Título" name="title" />
-          </div>
-        </div>
-        <div class="field">
-          <div class="control">
-            <textarea id="text" class="textarea is-primary" name="text" rows="13"></textarea>
-          </div>
-        </div>
-        <div class="field is-flex is-justify-content-end">
-          <button class="button has-background-primary-dark is-rounded" value="Guardar" type="submit">
-            <span class="icon has-text-white-ter">
-              <i class="fa-regular fa-floppy-disk"></i>
-            </span>
-            <span class="has-text-white-ter">Guardar</span>
-          </button>
-        </div>
-      </form>
+      <div class="cards">
+      </div>
     </section>
     <script src="scripts/app.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/script2.js"></script>
   </body>
 </html>
