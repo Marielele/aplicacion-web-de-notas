@@ -22,17 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
         const btnEdit = document.createElement("BUTTON");
         const btnErase = document.createElement("BUTTON");
         const { title, text, id } = note;
+        let textLength = text;
+        if (textLength.length > 40) {
+          textLength = `${textLength.slice(0, 38)}...`;
+        }
+        moment.locale("es-mx");
         card.id = id;
+        card.classList.add("mb-3");
         cardHeader.classList.add("card-header");
         cardHeader.innerHTML = `
-          <p class="card-header-title">${title}</p>
+          <p class="card-header-title p-3">${title}</p>
         `;
-        cardContent.classList.add("card-content");
+        cardContent.classList.add("card-content", "p-3");
         cardContent.innerHTML = `
           <div class="content">
-            ${text}
+            ${textLength}
             <br />
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            <time class="is-size-7 has-text-grey is-family-code" datetime="${id}">${moment(id).format(
+          "LLL"
+        )}</time>
           </div>
         `;
         footer.classList.add("card-footer");

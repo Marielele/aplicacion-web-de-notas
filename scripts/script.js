@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (label.innerHTML == "Editar nota:") {
       localStorage.removeItem("editNote");
-      label.innerHTML = "Nueva nota:"
+      label.innerHTML = "Nueva nota:";
     }
     const noteObj = {
       id: Date.now(),
@@ -42,14 +42,18 @@ document.addEventListener("DOMContentLoaded", function () {
       text: textArea.value,
     };
     notes = [...notes, noteObj];
+    notes.sort(compareArray);
     localStorage.setItem("notes", JSON.stringify(notes));
     form.reset();
-    console.log(notes);
   }
 
   function loadNotes() {
     if (storage) {
       notes = JSON.parse(storage);
     }
+  }
+
+  function compareArray(a, b) {
+    return b.id - a.id;
   }
 });
