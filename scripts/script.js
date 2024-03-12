@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   // variables
   const textArea = document.querySelector("textarea");
+  const title = document.querySelector("#title");
   const form = document.querySelector("#form");
+  const label = document.querySelector("div.field label");
   const storage = localStorage.getItem("notes");
   let notes = [];
 
@@ -16,14 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (mqMedium.matches) {
       textArea.rows = 18;
     }
+    if (localStorage.getItem("editNote")) {
+      const edit = JSON.parse(localStorage.getItem("editNote"));
+      label.innerHTML = "Editar nota:";
+      title.value = edit.title;
+      textArea.value = edit.text;
+    }
     loadNotes();
   }
 
   function addNote(e) {
     e.preventDefault();
-    const title = document.querySelector("#title");
     if (textArea.value.trim() === "" || title.value.trim() === "") {
       return;
+    }
+    if (label.innerHTML == "Editar nota:") {
+      localStorage.removeItem("editNote");
+      label.innerHTML = "Nueva nota:"
     }
     const noteObj = {
       id: Date.now(),
@@ -33,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     notes = [...notes, noteObj];
     localStorage.setItem("notes", JSON.stringify(notes));
     form.reset();
-    console.log(notes)
+    console.log(notes);
   }
 
   function loadNotes() {

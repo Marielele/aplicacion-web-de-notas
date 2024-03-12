@@ -73,8 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
         card.appendChild(footer);
         cardsDiv.appendChild(card);
 
-        btnEdit.onclick = (e) => {
-          console.log(e);
+        btnEdit.onclick = () => {
+          localStorage.setItem("editNote", JSON.stringify(note));
+          eraseNote(id);
+          location.href = "index.html";
         };
         btnErase.onclick = (e) => {
           eraseNote(id);
